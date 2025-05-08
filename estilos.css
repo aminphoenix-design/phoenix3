@@ -38,27 +38,56 @@ nav ul li {
 nav ul li a {
   color: #fff;
   font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-.boton {
-  background-color: #555;
-  padding: 10px 20px;
-  color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+nav ul li a:hover {
+  color: #f1a500;
 }
 
-.boton:hover {
-  background-color: #777;
-  cursor: pointer;
-}
-
-/* Animaciones de Entrada */
+/* Sección de Bienvenida */
 #bienvenida {
   text-align: center;
   margin: 50px;
 }
 
+#bienvenida h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+#bienvenida p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.boton {
+  background-color: #555;
+  padding: 15px 30px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #f1a500;
+  cursor: pointer;
+}
+
+/* Animaciones de Entrada */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilo de la Notificación Emergente */
 .revelacion {
   position: fixed;
   top: 0;
@@ -72,52 +101,92 @@ nav ul li a {
   align-items: center;
   text-align: center;
   z-index: 1000;
+  animation: revealPopup 1s ease-in-out;
+}
+
+#mensaje-revelacion {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 
 #cerrar-revelacion {
-  margin-top: 20px;
   padding: 10px 20px;
   background-color: #444;
   border: none;
   color: #fff;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 1.2rem;
 }
 
 #cerrar-revelacion:hover {
-  background-color: #666;
+  background-color: #f1a500;
 }
 
-/* Estilos para las invocaciones */
+/* Animación para la notificación emergente */
+@keyframes revealPopup {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Estilos para las Invocaciones */
 #ritual {
-  margin: 30px;
+  margin: 50px;
+  text-align: center;
 }
 
-#ritual form input, #ritual form select, #ritual form textarea {
-  padding: 10px;
+#ritual form {
+  margin-top: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+#ritual form input, 
+#ritual form select, 
+#ritual form textarea {
+  padding: 12px;
   width: 100%;
   margin: 10px 0;
   background-color: #333;
   border: none;
   color: #fff;
   border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#ritual form input:focus, 
+#ritual form select:focus, 
+#ritual form textarea:focus {
+  background-color: #444;
 }
 
 #ritual form button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #555;
   border: none;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
 }
 
 #ritual form button:hover {
-  background-color: #777;
+  background-color: #f1a500;
 }
 
-/* Estilo de las invocaciones */
+/* Estilo de las Invocaciones Recientes */
 #invocaciones {
-  margin-top: 20px;
+  margin-top: 30px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .invocacion {
@@ -133,12 +202,68 @@ nav ul li a {
   font-size: 1rem;
 }
 
+.invocacion p strong {
+  color: #f1a500;
+}
+
+/* Efectos de Hover en Imágenes de la Galería */
+.imagen-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+}
+
 .imagen-galeria img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .imagen-galeria img:hover {
   transform: scale(1.1);
   opacity: 0.8;
+}
+
+/* Sección de Contacto */
+#contacto {
+  background-color: #222;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 2rem;
+  color: #f1a500;
+  margin-bottom: 30px;
+}
+
+#contacto form input, 
+#contacto form textarea {
+  padding: 12px;
+  width: 100%;
+  margin: 10px 0;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+#contacto form button {
+  padding: 12px 25px;
+  background-color: #555;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+#contacto form button:hover {
+  background-color: #f1a500;
 }
 
