@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhoenixFrame - El Umbral</title>
+  <!-- Fuentes, estilos o scripts externos pueden ir aquí -->
+  <!-- <link rel="stylesheet" href="estilos.css"> -->
+</head>
+<body>
+
+  <!-- 🔥 1. Hero / Portal de Entrada -->
+  <header id="hero">
+    <video autoplay muted loop id="video-fondo">
+      <source src="fondo-oscuro.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+    <div class="contenido-hero">
+      <h1>PhoenixFrame</h1>
+      <p>Traspasa el umbral. Tiempo. Vida. Muerte. Poder.</p>
+    </div>
+  </header>
+
+  <!-- 📖 2. Grimorio: Los Cuatro Pilares -->
+  <section id="grimorio">
+    <h2>El Grimorio del Fénix</h2>
+    <div class="pilar" id="tiempo">
+      <h3>Tiempo</h3>
+      <p>El tiempo no fluye. Se repite. Se pliega. Se desangra.</p>
+    </div>
+    <div class="pilar" id="vida">
+      <h3>Vida</h3>
+      <p>La vida es fuego contenido. Una danza entre el caos y el soplo divino.</p>
+    </div>
+    <div class="pilar" id="muerte">
+      <h3>Muerte</h3>
+      <p>La muerte no te quita. Te transforma. Todo lo muerto canta.</p>
+    </div>
+    <div class="pilar" id="poder">
+      <h3>Poder</h3>
+      <p>El verdadero poder no se impone. Se invoca. Se arrebata a los hilos del destino.</p>
+    </div>
+  </section>
+
+  <!-- 🔮 3. Ritual Interactivo -->
+  <section id="ritual">
+    <h2>Invoca Tu Esencia</h2>
+    <form id="formulario-ritual">
+      <label for="nombre">Tu nombre ritual:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="simbolo">Elige un símbolo:</label>
+      <select id="simbolo" name="simbolo">
+        <option value="tiempo">⏳ Tiempo</option>
+        <option value="vida">🔥 Vida</option>
+        <option value="muerte">💀 Muerte</option>
+        <option value="poder">⚡ Poder</option>
+      </select>
+
+      <button type="submit">Recibir Oráculo</button>
+    </form>
+
+    <div id="oraculo">
+      <!-- Aquí se muestra la frase oracular -->
+    </div>
+  </section>
+
+  <!-- 🖼️ 4. Cámara de Visiones -->
+  <section id="galeria">
+    <h2>Visiones del Abismo</h2>
+    <div class="imagenes-galeria">
+      <!-- Aquí puedes insertar imágenes o videos -->
+      <img src="vision1.jpg" alt="Fénix oscuro">
+      <img src="vision2.jpg" alt="Reloj cósmico">
+      <video autoplay loop muted>
+        <source src="vision3.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- 📜 5. La Profecía / Blog -->
+  <section id="profecia">
+    <h2>La Profecía</h2>
+    <article>
+      <h3>Los Ecos del Tiempo</h3>
+      <p>Un extracto filosófico sobre la naturaleza cíclica del tiempo...</p>
+      <a href="ecos-del-tiempo.html">Leer más</a>
+    </article>
+    <!-- Puedes añadir más artículos -->
+  </section>
+
+  <!-- 🕳️ 6. Invocación / Contacto -->
+  <footer id="contacto">
+    <h2>Invoca al Círculo</h2>
+    <form>
+      <input type="email" placeholder="Tu correo encantado" required>
+      <textarea placeholder="Tu mensaje sellado..."></textarea>
+      <button type="submit">Enviar Señal</button>
+    </form>
+    <p>&copy; 2025 PhoenixFrame. Todo lo muerto canta.</p>
+  </footer>
+
+</body>
+</html>
