@@ -1,53 +1,44 @@
-// Inicialización de AOS (Animate on Scroll)
+// Esperar a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
-  AOS.init(); // Inicia las animaciones de desplazamiento al cargar la página
-});
+  // Inicializar las animaciones AOS (Animate On Scroll)
+  AOS.init();
 
-// Función para mostrar una notificación emergente (revelación)
-function mostrarRevelacion(mensaje) {
-  document.getElementById('mensaje-revelacion').textContent = mensaje;
-  document.getElementById('revelacion').style.display = 'flex';
-}
+  // Mostrar la notificación emergente cuando se haga clic en el botón
+  const boton = document.querySelector(".boton");
+  const revelacion = document.querySelector(".revelacion");
+  const cerrarRevelacion = document.querySelector("#cerrar-revelacion");
 
-// Cerrar la notificación emergente
-document.getElementById('cerrar-revelacion')?.addEventListener('click', function () {
-  document.getElementById('revelacion').style.display = 'none';
-});
+  // Evento para abrir la notificación emergente
+  boton.addEventListener("click", function () {
+    revelacion.style.display = "flex"; // Mostrar la ventana emergente
+  });
 
-// Función para manejar la invocación (comentarios del formulario)
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById('ritualForm');
-  const invocacionesDiv = document.getElementById('invocaciones');
+  // Evento para cerrar la notificación emergente
+  cerrarRevelacion.addEventListener("click", function () {
+    revelacion.style.display = "none"; // Ocultar la ventana emergente
+  });
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();  // Evita que la página se recargue al enviar el formulario
+  // Función para manejar el formulario de invocación
+  const formulario = document.querySelector("#ritual form");
+  formulario.addEventListener("submit", function (e) {
+    e.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
 
-      // Recoger los datos del formulario
-      const nombre = document.getElementById('nombre').value;
-      const pilar = document.getElementById('pilar').value;
-      const mensaje = document.getElementById('mensaje').value;
+    // Obtener los valores del formulario
+    const nombre = document.querySelector("#nombre").value;
+    const invocacion = document.querySelector("#invocacion").value;
 
-      // Crear el nuevo mensaje de invocación
-      const nuevaInvocacion = document.createElement('div');
-      nuevaInvocacion.classList.add('invocacion');
-      nuevaInvocacion.innerHTML = `
-        <p><strong>${nombre}</strong> invocó el pilar de <strong>${pilar}</strong>:</p>
-        <p>"${mensaje}"</p>
-      `;
+    // Crear una nueva invocación reciente y agregarla a la lista
+    const invocacionesRecientes = document.querySelector("#invocaciones");
+    const nuevaInvocacion = document.createElement("div");
+    nuevaInvocacion.classList.add("invocacion");
+    nuevaInvocacion.innerHTML = `
+      <p><strong>Nombre:</strong> ${nombre}</p>
+      <p><strong>Invocación:</strong> ${invocacion}</p>
+    `;
+    invocacionesRecientes.appendChild(nuevaInvocacion);
 
-      // Agregarlo al div de invocaciones
-      invocacionesDiv.appendChild(nuevaInvocacion);
-
-      // Limpiar el formulario
-      form.reset();
-    });
-  }
-
-  // Agregar un evento de clic a un enlace para mostrar una notificación de revelación
-  document.querySelectorAll('a').forEach((elemento) => {
-    elemento.addEventListener('click', function () {
-      mostrarRevelacion('¡La profecía se revela! El destino está cerca...');
-    });
+    // Limpiar el formulario después de enviarlo
+    formulario.reset();
   });
 });
+
