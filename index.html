@@ -3,56 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio - PhoenixFrame</title>
+  <title>PhoenixFrame</title>
   <link rel="stylesheet" href="estilos.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
-  <!-- Menú de Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="grimorio.html">Grimorio</a></li>
-      <li><a href="ritual.html">Ritual</a></li>
-      <li><a href="visiones.html">Visiones</a></li>
-      <li><a href="profecia.html">Profecía</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="grimorio.html">Grimorio</a></li>
+        <li><a href="profecia.html">Profecía</a></li>
+        <li><a href="ritual.html">Ritual</a></li>
+        <li><a href="visiones.html">Visiones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Sección Principal -->
   <section id="bienvenida">
-    <h1 data-aos="fade-up" data-aos-duration="1000">Bienvenido al Mundo de PhoenixFrame</h1>
-    <p data-aos="fade-up" data-aos-duration="1200">Un lugar donde el tiempo, la vida, la muerte y el poder se entrelazan.</p>
-    <div data-aos="fade-up" data-aos-duration="1400">
-      <a href="grimorio.html" class="boton">Explora el Grimorio</a>
-    </div>
+    <h1>Bienvenido a PhoenixFrame</h1>
+    <p>Explora los misterios del tiempo, la vida, la muerte y el poder. Un viaje hacia lo desconocido.</p>
+    <button class="boton">Comienza tu viaje</button>
   </section>
 
-  <div id="revelacion" class="revelacion">
-    <p id="mensaje-revelacion"></p>
+  <div class="revelacion">
+    <div id="mensaje-revelacion">Has comenzado el ritual...</div>
     <button id="cerrar-revelacion">Cerrar</button>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init(); // Inicializa las animaciones
-
-    // Función para mostrar una notificación emergente
-    function mostrarRevelacion(mensaje) {
-      document.getElementById('mensaje-revelacion').textContent = mensaje;
-      document.getElementById('revelacion').style.display = 'flex';
-    }
-
-    // Cerrar revelación
-    document.getElementById('cerrar-revelacion').addEventListener('click', function () {
-      document.getElementById('revelacion').style.display = 'none';
-    });
-
-    // Ejemplo de activación de revelación
-    document.querySelector('a').addEventListener('click', function () {
-      mostrarRevelacion('¡La profecía se revela! El destino está cerca...');
-    });
-  </script>
 </body>
 </html>
