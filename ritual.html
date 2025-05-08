@@ -20,36 +20,52 @@
     </ul>
   </nav>
 
-  <!-- Ritual -->
+  <!-- Sección Ritual -->
   <section id="ritual">
     <h2>Invoca Tu Esencia</h2>
     <form id="ritualForm">
-      <input type="text" placeholder="Tu nombre" required>
-      <select>
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <select id="pilar">
         <option value="tiempo">⏳ Tiempo</option>
         <option value="vida">🔥 Vida</option>
         <option value="muerte">💀 Muerte</option>
         <option value="poder">⚡ Poder</option>
       </select>
-      <button type="submit">Recibir Oráculo</button>
+      <textarea id="mensaje" placeholder="Escribe tu invocación..." required></textarea>
+      <button type="submit">Invocar</button>
     </form>
-    <div id="oraculo"></div>
+
+    <div id="invocaciones">
+      <h3>Invocaciones Recientes</h3>
+      <!-- Los mensajes se agregarán aquí -->
+    </div>
   </section>
 
   <script>
-    // Script para generar un "oráculo"
     const form = document.getElementById('ritualForm');
+    const invocacionesDiv = document.getElementById('invocaciones');
+
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const oraculo = document.getElementById('oraculo');
-      const pillar = form.querySelector('select').value;
-      const messages = {
-        tiempo: "El tiempo es un espejo, y todo se refleja en él. La clave está en el momento exacto.",
-        vida: "La vida es un fuego inextinguible. Déjate consumir por su calor, y renacerás.",
-        muerte: "La muerte no es el final. Más bien es el umbral hacia lo que está más allá.",
-        poder: "El poder se construye sobre la confianza. Invócalo, pero no lo poseas.",
-      };
-      oraculo.innerHTML = `<p><strong>Oráculo:</strong> ${messages[pillar]}</p>`;
+      e.preventDefault();  // Evitar recarga de página
+
+      // Recoger datos
+      const nombre = document.getElementById('nombre').value;
+      const pilar = document.getElementById('pilar').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      // Crear nueva invocación
+      const nuevaInvocacion = document.createElement('div');
+      nuevaInvocacion.classList.add('invocacion');
+      nuevaInvocacion.innerHTML = `
+        <p><strong>${nombre}</strong> invocó el pilar de <strong>${pilar}</strong>:</p>
+        <p>"${mensaje}"</p>
+      `;
+
+      // Agregar al div de invocaciones
+      invocacionesDiv.appendChild(nuevaInvocacion);
+
+      // Limpiar el formulario
+      form.reset();
     });
   </script>
 
