@@ -1,34 +1,218 @@
 
+/* Fuente mística */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #0d0d0d;
   color: #eaeaea;
   font-family: 'Cinzel', serif;
+  line-height: 1.6;
 }
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+nav {
+  background: #111;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 nav ul {
   display: flex;
-  list-style: none;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
+  list-style: none;
 }
+
 nav a {
-  color: #ccc;
   text-decoration: none;
+  color: #aaa;
+  font-weight: bold;
+  transition: color 0.3s;
 }
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Hero */
 #hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 #video-fondo {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.4);
+  z-index: 0;
 }
+
 .contenido-hero {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   text-align: center;
-  padding-top: 20%;
+  color: #fff;
+}
+
+.contenido-hero h1 {
+  font-size: 4rem;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.contenido-hero p {
+  font-size: 1.5rem;
+  color: #ddd;
+}
+
+/* Secciones generales */
+section {
+  padding: 4rem 2rem;
+}
+
+footer {
+  padding: 3rem 2rem;
+  background: #111;
+  text-align: center;
+  color: #999;
+}
+
+/* Grimorio */
+#grimorio .pilar {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 4px solid crimson;
+  background: rgba(255,255,255,0.02);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ritual */
+#ritual form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#ritual input, #ritual select, #ritual textarea {
+  background: #222;
+  color: #eee;
+  border: 1px solid #444;
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+#ritual button {
+  background: crimson;
+  border: none;
+  padding: 0.75rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#ritual button:hover {
+  background: darkred;
+}
+
+#oraculo {
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: #f5c542;
+}
+
+/* Galería */
+.imagenes-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.imagenes-galeria img, .imagenes-galeria video {
+  width: 100%;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+/* Profecía */
+#profecia article {
+  background: rgba(255,255,255,0.02);
+  padding: 2rem;
+  border-left: 5px solid #c0392b;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+#profecia a {
+  color: #e67e22;
+  text-decoration: none;
+}
+
+#profecia a:hover {
+  text-decoration: underline;
+}
+
+/* Contacto */
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contacto input, #contacto textarea {
+  background: #1c1c1c;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+#contacto button {
+  background: #8e44ad;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+#contacto button:hover {
+  background: #732d91;
 }
