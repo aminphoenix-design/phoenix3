@@ -1,44 +1,44 @@
-// Esperar a que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", function () {
-  // Inicializar las animaciones AOS (Animate On Scroll)
-  AOS.init();
+// Esperamos que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // Funcionalidad del botón "Comienza tu viaje"
+  const botonViaje = document.querySelector('.boton');
+  const revelacion = document.querySelector('.revelacion');
+  const cerrarRevelacion = document.querySelector('#cerrar-revelacion');
 
-  // Mostrar la notificación emergente cuando se haga clic en el botón
-  const boton = document.querySelector(".boton");
-  const revelacion = document.querySelector(".revelacion");
-  const cerrarRevelacion = document.querySelector("#cerrar-revelacion");
+  // Cuando se hace clic en "Comienza tu viaje"
+  if (botonViaje) {
+    botonViaje.addEventListener('click', function() {
+      // Mostrar la revelación al usuario
+      revelacion.style.display = 'flex';
+      setTimeout(() => {
+        revelacion.style.display = 'none';
+      }, 5000);  // Se oculta después de 5 segundos
+    });
+  }
 
-  // Evento para abrir la notificación emergente
-  boton.addEventListener("click", function () {
-    revelacion.style.display = "flex"; // Mostrar la ventana emergente
-  });
+  // Funcionalidad para cerrar la revelación
+  if (cerrarRevelacion) {
+    cerrarRevelacion.addEventListener('click', function() {
+      revelacion.style.display = 'none';
+    });
+  }
 
-  // Evento para cerrar la notificación emergente
-  cerrarRevelacion.addEventListener("click", function () {
-    revelacion.style.display = "none"; // Ocultar la ventana emergente
-  });
+  // Función para el formulario del Ritual
+  const formularioRitual = document.querySelector('form');
+  if (formularioRitual) {
+    formularioRitual.addEventListener('submit', function(event) {
+      event.preventDefault();  // Evita que se recargue la página
 
-  // Función para manejar el formulario de invocación
-  const formulario = document.querySelector("#ritual form");
-  formulario.addEventListener("submit", function (e) {
-    e.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+      const nombre = document.getElementById('nombre').value;
+      const invocacion = document.getElementById('invocacion').value;
+      
+      if (nombre && invocacion) {
+        alert(`Ritual realizado por: ${nombre}\nInvocación: ${invocacion}`);
+      } else {
+        alert('Por favor, completa todos los campos.');
+      }
+    });
+  }
 
-    // Obtener los valores del formulario
-    const nombre = document.querySelector("#nombre").value;
-    const invocacion = document.querySelector("#invocacion").value;
-
-    // Crear una nueva invocación reciente y agregarla a la lista
-    const invocacionesRecientes = document.querySelector("#invocaciones");
-    const nuevaInvocacion = document.createElement("div");
-    nuevaInvocacion.classList.add("invocacion");
-    nuevaInvocacion.innerHTML = `
-      <p><strong>Nombre:</strong> ${nombre}</p>
-      <p><strong>Invocación:</strong> ${invocacion}</p>
-    `;
-    invocacionesRecientes.appendChild(nuevaInvocacion);
-
-    // Limpiar el formulario después de enviarlo
-    formulario.reset();
-  });
 });
-
