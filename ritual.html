@@ -7,32 +7,51 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  
-<nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="grimorio.html">Grimorio</a></li>
-    <li><a href="ritual.html">Ritual</a></li>
-    <li><a href="visiones.html">Visiones</a></li>
-    <li><a href="profecia.html">Profecía</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</nav>
 
-  
-<section id="ritual">
-  <h2>Invoca Tu Esencia</h2>
-  <form>
-    <input type="text" placeholder="Nombre ritual" required>
-    <select>
-      <option>⏳ Tiempo</option>
-      <option>🔥 Vida</option>
-      <option>💀 Muerte</option>
-      <option>⚡ Poder</option>
-    </select>
-    <button>Recibir Oráculo</button>
-  </form>
-</section>
+  <!-- Menú de Navegación -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="grimorio.html">Grimorio</a></li>
+      <li><a href="ritual.html">Ritual</a></li>
+      <li><a href="visiones.html">Visiones</a></li>
+      <li><a href="profecia.html">Profecía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Ritual -->
+  <section id="ritual">
+    <h2>Invoca Tu Esencia</h2>
+    <form id="ritualForm">
+      <input type="text" placeholder="Tu nombre" required>
+      <select>
+        <option value="tiempo">⏳ Tiempo</option>
+        <option value="vida">🔥 Vida</option>
+        <option value="muerte">💀 Muerte</option>
+        <option value="poder">⚡ Poder</option>
+      </select>
+      <button type="submit">Recibir Oráculo</button>
+    </form>
+    <div id="oraculo"></div>
+  </section>
+
+  <script>
+    // Script para generar un "oráculo"
+    const form = document.getElementById('ritualForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const oraculo = document.getElementById('oraculo');
+      const pillar = form.querySelector('select').value;
+      const messages = {
+        tiempo: "El tiempo es un espejo, y todo se refleja en él. La clave está en el momento exacto.",
+        vida: "La vida es un fuego inextinguible. Déjate consumir por su calor, y renacerás.",
+        muerte: "La muerte no es el final. Más bien es el umbral hacia lo que está más allá.",
+        poder: "El poder se construye sobre la confianza. Invócalo, pero no lo poseas.",
+      };
+      oraculo.innerHTML = `<p><strong>Oráculo:</strong> ${messages[pillar]}</p>`;
+    });
+  </script>
 
 </body>
 </html>
