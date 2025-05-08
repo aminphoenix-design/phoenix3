@@ -1,0 +1,208 @@
+/* === RESET Y FUENTES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel', serif; /* Recomendado para un look místico */
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  color: #f4c430; /* Oro antiguo */
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #7a5c00;
+}
+
+a {
+  color: #b386ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === HERO === */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4) blur(2px);
+}
+
+.contenido-hero {
+  z-index: 1;
+  padding: 2rem;
+  animation: fadeIn 3s ease-in-out;
+}
+
+#hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* === GRIMORIO === */
+#grimorio {
+  padding: 4rem 2rem;
+  background-color: #121212;
+}
+
+#grimorio h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pilar {
+  margin: 2rem auto;
+  max-width: 700px;
+  border-left: 4px solid #7a00ff;
+  padding-left: 1.5rem;
+}
+
+.pilar h3 {
+  font-size: 1.8rem;
+  color: #d88;
+}
+
+/* === RITUAL === */
+#ritual {
+  padding: 4rem 2rem;
+  background-color: #0d0d0d;
+  text-align: center;
+}
+
+#ritual form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#ritual input, #ritual select, #ritual textarea {
+  background-color: #1c1c1c;
+  border: 1px solid #555;
+  padding: 0.75rem;
+  color: #fff;
+  width: 100%;
+}
+
+#ritual button {
+  background-color: #7a00ff;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#ritual button:hover {
+  background-color: #9f40ff;
+}
+
+#oraculo {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #c4aaff;
+}
+
+/* === GALERÍA === */
+#galeria {
+  background-color: #111;
+  padding: 4rem 2rem;
+}
+
+.imagenes-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.imagenes-galeria img,
+.imagenes-galeria video {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid #333;
+  filter: grayscale(40%) brightness(0.8);
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.imagenes-galeria img:hover,
+.imagenes-galeria video:hover {
+  filter: none;
+  transform: scale(1.05);
+}
+
+/* === BLOG === */
+#profecia {
+  padding: 4rem 2rem;
+  background-color: #0c0c0c;
+}
+
+#profecia article {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #333;
+  background-color: #181818;
+}
+
+/* === CONTACTO === */
+#contacto {
+  background-color: #000;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#contacto input, #contacto textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#contacto button {
+  background-color: #5500aa;
+  padding: 0.75rem 2rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#contacto button:hover {
+  background-color: #7a00ff;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
