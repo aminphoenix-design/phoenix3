@@ -1,267 +1,317 @@
-/* Estilos Generales */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #121212;
-  color: #fff;
+/* Reset general de estilos */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: #f1f1f1;
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  font-family: 'Georgia', serif;
-}
-
-nav {
-  background-color: #333;
-  padding: 10px;
+/* Encabezado y navegación */
+header {
+  background-color: #222;
+  padding: 20px;
   text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0 10px;
+  display: inline;
+  margin: 0 20px;
 }
 
 nav ul li a {
-  color: #fff;
-  font-size: 18px;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 0;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #f1a500;
+  color: #d4af37;
 }
 
-/* Sección de Bienvenida */
+/* Sección de bienvenida */
 #bienvenida {
   text-align: center;
-  margin: 50px;
+  padding: 100px 20px;
+  background: url('imagenes/fondo.jpg') no-repeat center center/cover;
+  color: #f5f5f5;
+  border-bottom: 2px solid #d4af37;
 }
 
 #bienvenida h1 {
-  font-size: 3rem;
+  font-size: 3em;
+  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: fadeIn 2s ease-in-out;
 }
 
 #bienvenida p {
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-size: 1.2em;
+  margin-bottom: 40px;
 }
 
 .boton {
-  background-color: #555;
-  padding: 15px 30px;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  background-color: #d4af37;
+  border: none;
+  color: #121212;
+  padding: 15px 40px;
+  font-size: 1.2em;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .boton:hover {
-  background-color: #f1a500;
-  cursor: pointer;
+  background-color: #f5f5f5;
+  color: #121212;
 }
 
-/* Animaciones de Entrada */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Estilo de la Notificación Emergente */
-.revelacion {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  display: none;
-  justify-content: center;
-  align-items: center;
+/* Sección de grimorio */
+#grimorio {
+  padding: 80px 20px;
   text-align: center;
-  z-index: 1000;
-  animation: revealPopup 1s ease-in-out;
+  background: #181818;
+  border-bottom: 2px solid #d4af37;
 }
 
-#mensaje-revelacion {
-  font-size: 1.8rem;
+#grimorio h1 {
+  font-size: 2.5em;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-#cerrar-revelacion {
-  padding: 10px 20px;
-  background-color: #444;
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-#cerrar-revelacion:hover {
-  background-color: #f1a500;
-}
-
-/* Animación para la notificación emergente */
-@keyframes revealPopup {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Estilos para las Invocaciones */
-#ritual {
-  margin: 50px;
-  text-align: center;
-}
-
-#ritual form {
-  margin-top: 20px;
-  max-width: 600px;
-  margin: auto;
-}
-
-#ritual form input, 
-#ritual form select, 
-#ritual form textarea {
-  padding: 12px;
-  width: 100%;
-  margin: 10px 0;
-  background-color: #333;
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-#ritual form input:focus, 
-#ritual form select:focus, 
-#ritual form textarea:focus {
-  background-color: #444;
-}
-
-#ritual form button {
-  padding: 12px 25px;
-  background-color: #555;
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease;
-}
-
-#ritual form button:hover {
-  background-color: #f1a500;
-}
-
-/* Estilo de las Invocaciones Recientes */
-#invocaciones {
-  margin-top: 30px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.invocacion {
-  background-color: #333;
-  color: #fff;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 8px;
-}
-
-.invocacion p {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.invocacion p strong {
-  color: #f1a500;
-}
-
-/* Efectos de Hover en Imágenes de la Galería */
 .imagen-galeria {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin: 30px 0;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .imagen-galeria img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 10px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
 }
 
 .imagen-galeria img:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+  transform: scale(1.05);
 }
 
-/* Sección de Contacto */
+/* Sección de contacto */
 #contacto {
-  background-color: #222;
-  padding: 50px 0;
+  padding: 80px 20px;
+  background-color: #121212;
   text-align: center;
 }
 
 #contacto h2 {
-  font-size: 2rem;
-  color: #f1a500;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+#contacto p {
+  font-size: 1.1em;
   margin-bottom: 30px;
 }
 
-#contacto form input, 
-#contacto form textarea {
-  padding: 12px;
-  width: 100%;
-  margin: 10px 0;
-  background-color: #333;
-  border: none;
-  color: #fff;
-  border-radius: 5px;
+#contacto h3 {
+  font-size: 2em;
+  margin-top: 20px;
+  letter-spacing: 2px;
 }
 
-#contacto form button {
-  padding: 12px 25px;
-  background-color: #555;
-  border: none;
-  color: #fff;
+#contacto .razon {
+  font-size: 1.2em;
+  color: #d4af37;
+  margin-bottom: 40px;
+}
+
+/* Formularios */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #333;
+  border: 1px solid #555;
+  color: #f5f5f5;
+  font-size: 1em;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
   transition: background-color 0.3s ease;
 }
 
-#contacto form button:hover {
-  background-color: #f1a500;
+form input:focus, form textarea:focus {
+  background-color: #444;
+  outline: none;
+  border-color: #d4af37;
+}
+
+form button {
+  background-color: #d4af37;
+  color: #121212;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+/* Sección de Profecía */
+#profecia {
+  padding: 80px 20px;
+  background: #1d1d1d;
+  text-align: center;
+  color: #f5f5f5;
+  border-bottom: 2px solid #d4af37;
+}
+
+#profecia h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.imagen-galeria img {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.imagen-galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Sección del Ritual */
+#ritual {
+  padding: 80px 20px;
+  background: #181818;
+  color: #f5f5f5;
+  text-align: center;
+  border-bottom: 2px solid #d4af37;
+}
+
+#ritual h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#ritual form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ritual form input, #ritual form textarea {
+  width: 60%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #333;
+  border: 1px solid #555;
+  color: #f5f5f5;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+#ritual form button {
+  background-color: #d4af37;
+  border: none;
+  color: #121212;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#ritual form button:hover {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+/* Visiones */
+#visiones {
+  padding: 80px 20px;
+  background: #222;
+  text-align: center;
+}
+
+#visiones h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.imagen-galeria img {
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.imagen-galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Efectos revelación */
+.revelacion {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 999;
+}
+
+.revelacion #mensaje-revelacion {
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+.revelacion #cerrar-revelacion {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #d4af37;
+  border: none;
+  color: #121212;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.revelacion #cerrar-revelacion:hover {
+  background-color: #f5f5f5;
+  color: #121212;
 }
